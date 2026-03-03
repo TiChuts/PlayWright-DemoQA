@@ -10,7 +10,8 @@ export class BookService {
     this._client = apiClient;
   }
 
-  async addBooks(userId: string, token: string) {
+  async addBooks(token: string) {
+    const account = LOGIN_DATA["test_account_01"];
     const book_isbn = BOOK_DATA["valid_book_1"];
 
     return await this._client.post(API_DEMO_QA_BOOKS_ENDPOINTS.ADD_BOOKS, {
@@ -19,7 +20,7 @@ export class BookService {
         "Content-Type": "application/json",
       },
       data: {
-        userId: userId,
+        userId: account.userId,
         collectionOfIsbns: [
           {
             isbn: book_isbn.isbn,

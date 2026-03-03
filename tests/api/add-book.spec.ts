@@ -11,9 +11,8 @@ test.describe("Add Book", () => {
     bookService,
     loginService,
   }) => {
-    const userId = await loginService.getUserId();
     const token = await loginService.getAccessToken();
-    const response = await bookService.addBooks(userId, token);
+    const response = await bookService.addBooks(token);
     console.log(response);
   });
 });
