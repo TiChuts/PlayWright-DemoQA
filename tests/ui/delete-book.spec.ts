@@ -16,11 +16,11 @@ test.describe("Delete Books", () => {
     await bookPage.searchBooks(searchBooksName);
     await bookPage.verifyBookSearchResults(searchBooksName);
 
-    (await bookPage.getDeleteBookIconByBookTitle(searchBooksName)).click();
+    const deleteIcon =
+      await bookPage.getDeleteBookIconByBookTitle(searchBooksName);
+    await deleteIcon.click();
     await bookPage.confirmDeleteBook();
 
     await bookPage.searchBooks(searchBooksName);
-
-    await loginPage.logout();
   });
 });

@@ -15,7 +15,7 @@ export class LoginPage {
     this.passwordTextbox = new Element("//input[@id='password']");
     this.loginButton = new Element("//button[@id='login']");
     this.loginUsername = new Element("//label[@id='userName-value']");
-    this.logoutButton = new Element("//button[.='Log out']");
+    this.logoutButton = new Element("//button[.='Logout']");
   }
 
   async login(loginInfo: Account) {

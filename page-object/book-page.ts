@@ -26,7 +26,7 @@ export class BookPage {
 
   async verifyBookSearchResults(booksName: string) {
     await this.searchResults.waitForElementToBeVisible();
-    await this.bookStoreAPILabel.scrollIntoView();
+    // await this.bookStoreAPILabel.scrollIntoView();
 
     const books = await this.searchResults.getListCurrentLocators();
 
@@ -41,11 +41,9 @@ export class BookPage {
   }
 
   async getDeleteBookIconByBookTitle(bookName: string) {
-    let deleteBookIcon = new Element(
-      `//div[@class='rt-td'][.//a[normalize-space(.)='${bookName}']]
-      /following-sibling::div//span[contains(@id,'delete-record')]`,
+    return new Element(
+      `//a[normalize-space()="${bookName}"]/ancestor::td/following-sibling::td[3]/div//span[contains(@id,'delete-record')]`,
     );
-    return new Element(deleteBookIcon);
   }
 
   async confirmDeleteBook() {

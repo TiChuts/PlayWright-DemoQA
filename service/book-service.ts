@@ -16,19 +16,18 @@ export class BookService {
     const token = await loginService.getAccessToken();
     const account = LOGIN_DATA["test_account_01"];
 
+    this._client.headers = {
+      Authorization: `${token}`,
+      "Content-Type": "application/json",
+    };
+
     return await this._client.post(API_DEMO_QA_BOOKS_ENDPOINTS.ADD_BOOKS, {
-      headers: {
-        Authorization: token,
-        "Content-Type": "application/json",
-      },
-      data: {
-        userId: account.userId,
-        collectionOfIsbns: [
-          {
-            isbn: isbn,
-          },
-        ],
-      },
+      userId: account.userId,
+      collectionOfIsbns: [
+        {
+          isbn: isbn,
+        },
+      ],
     });
   }
 }
