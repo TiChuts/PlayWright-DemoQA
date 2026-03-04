@@ -8,7 +8,6 @@ export const API_DEMO_QA_ENDPOINTS = {
   BASE_URL: "https://demoqa.com/",
   AUTHORIZED: "/Account/v1/Authorized",
   GENERATE_TOKEN: "/Account/v1/GenerateToken",
-  LOGIN: "/Account/v1/Login",
 };
 
 export const DEMO_QA_BOOKS_ENDPOINTS = {

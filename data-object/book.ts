@@ -1,3 +1,3 @@
 export interface Book {
-  isbn: string | undefined;
+  isbn: string;
 }

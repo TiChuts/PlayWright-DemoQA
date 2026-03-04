@@ -8,24 +8,6 @@ export class LoginService {
   constructor(apiClient: APIClient) {
     this._client = apiClient;
   }
-  async loginUser() {
-    const account = LOGIN_DATA["test_account_01"];
-    return await this._client.post(API_DEMO_QA_ENDPOINTS.LOGIN, {
-      userName: account.userName,
-      password: account.password,
-    });
-  }
-
-  async getUserId(): Promise<string> {
-    const response = await this.loginUser();
-
-    if (response.ok()) {
-      const body = await response.json();
-      return body.userId;
-    }
-
-    throw new Error("Login failed");
-  }
 
   //Bearer Token
   async generateToken() {
