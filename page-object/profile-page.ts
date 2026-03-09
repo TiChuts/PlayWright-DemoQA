@@ -2,7 +2,7 @@ import { Element, LocatorType } from "../core/element/element";
 import { BrowserManagement } from "../core/browser/browser-management";
 const { expect } = require("@playwright/test");
 
-export class BookPage {
+export class ProfilePage {
   searchBox: Element;
   searchResults: Element;
   bookStoreLabel: Element;
